@@ -1,1 +1,122 @@
+<div class="dialog-box" id="picturesDialog">
+    <div class="dialog-title">
+        <span>Pictures - Memes and Anime</span>
+        <span class="close-button" onclick="closeDialog('picturesDialog')">×</span>
+    </div>
+    <div class="dialog-content" style="height: 400px; overflow-y: auto;">
+        <div class="picture-grid">
+            <img src="https://opreviews.anime-pictures.net/955/95560b4f6ff7d99c3200cdcfc13524dc_bp.png" alt="Meme 1">
+            <img src="https://opreviews.anime-pictures.net/011/0115da74979fe25706a7cafe81adb31c_bp.jpg" alt="Meme 2">
+            <img src="https://opreviews.anime-pictures.net/1e5/1e5114a37ac0d347cb66448da2738950_bp.jpg" alt="Meme 3">
+            <img src="https://opreviews.anime-pictures.net/fca/fcacaa1ba1d9b1c8e9c07772fa9c72bf_bp.jpg" alt="Meme 4">
+            <img src="https://opreviews.anime-pictures.net/ae5/ae58654c9303919b9f84941b5f906244_bp.jpg" alt="Meme 5">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFExx4yjEthwO83jIQ_xgsTgj8GSTvfELjpQ&s" alt="Meme 6">
+            <img src="https://pbs.twimg.com/profile_images/1274136015964381191/23hIYeye_400x400.jpg" alt="Meme 7">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr8IONIlokZ4h8_RjdTmWJ9Hyy_jkQTfvQqg&s" alt="Meme 8">
+            <img src="https://opreviews.anime-pictures.net/955/95560b4f6ff7d99c3200cdcfc13524dc_bp.png" alt="Meme 9">
+            <img src="https://opreviews.anime-pictures.net/011/0115da74979fe25706a7cafe81adb31c_bp.jpg" alt="Meme 10">
+            <img src="https://opreviews.anime-pictures.net/1e5/1e5114a37ac0d347cb66448da2738950_bp.jpg" alt="Meme 11">
+            <img src="https://opreviews.anime-pictures.net/fca/fcacaa1ba1d9b1c8e9c07772fa9c72bf_bp.jpg" alt="Meme 12">
+            <img src="https://opreviews.anime-pictures.net/ae5/ae58654c9303919b9f84941b5f906244_bp.jpg" alt="Meme 13">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFExx4yjEthwO83jIQ_xgsTgj8GSTvfELjpQ&s" alt="Meme 14">
+            <img src="https://pbs.twimg.com/profile_images/1274136015964381191/23hIYeye_400x400.jpg" alt="Meme 15">
+        </div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="dialog-button" onclick="closeDialog('picturesDialog')">Close</button>
+    </div>
+</div>
 
+    <div class="dialog-box" id="cvDialog">
+        <div class="dialog-title">
+            <span>View CV</span>
+            <span class="close-button" onclick="closeDialog('cvDialog')">×</span>
+        </div>
+        <div class="dialog-content">
+            There is no CV. I love you.
+        </div>
+        <div class="dialog-buttons">
+            <button class="dialog-button" onclick="showDialog('cv2Dialog')">I understand &lt;3</button>
+            <button class="dialog-button" onclick="showDialog('cv2Dialog')">Ok</button>
+        </div>
+    </div>
+
+    <div class="dialog-box" id="cv2Dialog">
+        <div class="dialog-title">
+            <span>View CV</span>
+            <span class="close-button" onclick="closeDialog('cv2Dialog')">×</span>
+        </div>
+        <div class="dialog-content">
+            Jk :) check out the READ ME on the top right
+        </div>
+        <div class="dialog-buttons">
+            <button class="dialog-button" onclick="closeDialog('cv2Dialog')">lol silly thx</button>
+        </div>
+    </div>
+
+    <div class="dialog-box" id="helpDialog">
+        <div class="dialog-title">
+            <span>What the heck</span>
+            <span class="close-button" onclick="closeDialog('helpDialog')">×</span>
+        </div>
+        <div class="dialog-content">
+            Welcome, I have been expecting you!<br><br>
+            Click on desktop icons or use the Start menu to navigate.<br>
+        </div>
+        <div class="dialog-buttons">
+            <button class="dialog-button" onclick="closeDialog('helpDialog')">Got it!</button>
+        </div>
+    </div>
+
+    <div class="dialog-box" id="secretDialog">
+        <div class="dialog-title">
+            <span>Use your keyboard to reveal</span>
+            <span class="close-button" onclick="closeDialog('secretDialog')">×</span>
+        </div>
+        <div class="dialog-content">
+            ↑↑↓↓←→←→
+        </div>
+        <div class="dialog-buttons">
+            <button class="dialog-button" onclick="closeDialog('secretDialog')">Ain't no way!</button>
+        </div>
+    </div>
+
+    <div class="dialog-box" id="konamiDialog">
+        <div class="dialog-title">
+            <span>Secret Revealed</span>
+            <span class="close-button" onclick="closeDialog('konamiDialog')">×</span>
+        </div>
+        <div class="dialog-content">
+            There is no shortcut. Work harder.
+        </div>
+        <div class="dialog-buttons">
+            <button class="dialog-button" onclick="closeDialog('konamiDialog')">LOCK BACK IN</button>
+        </div>
+    </div>
+
+<div class="dialog-box" id="portfolioWizard">
+    <div class="dialog-title">
+        <span>Portfolio Installation Wizard 4.2b</span>
+        <span class="close-button" onclick="closeDialog('portfolioWizard')">×</span>
+    </div>
+    <div class="dialog-content">
+        <div id="wizardContent"></div>
+    </div>
+    <div class="dialog-buttons">
+        <button class="dialog-button" id="backButton" onclick="wizardBack()" disabled>← Back</button>
+        <button class="dialog-button" id="nextButton" onclick="wizardNext()">Next →</button>
+    </div>
+</div>
+
+<div class="music-player dialog-box" id="musicPlayer">
+    <div class="dialog-title">
+        <span>Music Player</span>
+        <span class="close-button" onclick="closeMusicPlayer()">×</span>
+    </div>
+    <div class="dialog-content">
+        <video width="560" height="315" controls>
+            <source src="https://lavender-objective-python-753.mypinata.cloud/ipfs/QmbVmAz4wQp9keCHdzjsv9dZm6X5dAuTXruETJRiQSfBiu" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
