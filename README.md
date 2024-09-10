@@ -21,7 +21,12 @@ This is an interactive HTML-based resume designed to showcase my skills, creativ
 - **PINATA**: File API
 - **ENS**: Domain integration
 
-## How to Run/Deploy the Project
-1. Clone the repository:
+## How to Run/Deploy the Project (WIP)
+
+Clone the repository:
    ```bash
    git clone https://github.com/leftcurved/dynamic-web3-resume.git
+
+## Demo of Dynamic Web3 Resume
+
+![Resume Demo](https://github.com/leftcurved/dynamic-web3-resume/blob/main/resume.gif
