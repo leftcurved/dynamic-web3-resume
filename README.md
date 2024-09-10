@@ -1,5 +1,9 @@
 # dynamic-web3-resume
 
+## Demo of Dynamic Web3 Resume
+
+![Resume Demo](https://github.com/leftcurved/dynamic-web3-resume/blob/main/resume.gif
+
 # De Buck OS_V01 - Dynamic Synthwave Resume
 
 Welcome to **De Buck OS_V01**, a dynamic resume built with a retro Windows 98 synthwave style, hosted on IPFS via Pinata.
@@ -26,7 +30,3 @@ This is an interactive HTML-based resume designed to showcase my skills, creativ
 Clone the repository:
    ```bash
    git clone https://github.com/leftcurved/dynamic-web3-resume.git
-
-## Demo of Dynamic Web3 Resume
-
-![Resume Demo](https://github.com/leftcurved/dynamic-web3-resume/blob/main/resume.gif
