@@ -2,7 +2,7 @@
 
 ## Demo of Dynamic Web3 Resume
 
-![Resume Demo](https://github.com/leftcurved/dynamic-web3-resume/blob/main/resume.gif
+![Resume Demo](https://github.com/leftcurved/dynamic-web3-resume/blob/main/resume.gif)
 
 # De Buck OS_V01 - Dynamic Synthwave Resume
 
