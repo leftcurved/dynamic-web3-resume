@@ -1,1 +1,483 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+.desktop-icon#readme-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    width: 64px;
+    z-index: 1000; /* Ensure it's above other desktop elements */
+    Font-size: 14px;
+}
+
+.desktop-icon#readme-icon img {
+    width: 32px;
+    height: 32px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.desktop-icon#readme-icon span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    height: 80%;
+    background-color: #c0c0c0;
+    border: 2px outset #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dialog-title {
+    background-color: #000080;
+    color: #ffffff;
+    padding: 3px 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-content {
+    padding: 10px;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.dialog-content h1, .dialog-content h2 {
+    color: #000080;
+}
+
+.dialog-content ul {
+    padding-left: 20px;
+}
+
+body {
+    font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif;
+    background-color: #000080;
+    margin: 0;
+    padding: 20px;
+    color: #ffffff;
+    cursor: url('https://win98icons.alexmeub.com/icons/png/arrow-0.png'), auto;
+    overflow: hidden;
+}
+
+.desktop {
+    display: block;
+    position: relative;
+    height: calc(100vh - 35px); /* Adjust this if your taskbar height is different */
+    padding: 20px 40px;
+    overflow: auto;
+    background-image: url('https://lavender-objective-python-753.mypinata.cloud/ipfs/QmfDaEHFEDUiG6bjNV6iVJ1k2vT5CYwbsRsJKd2wPvC6H5');
+    background-size: 50%; /* Medium size, adjust as needed */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000080; /* Fallback color */
+}
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            text-align: left;
+            color: #ff00ff;
+            text-decoration: none;
+            cursor: url('https://win98icons.alexmeub.com/icons/png/hand-0.png'), pointer;
+            transition: all 0.3s ease;
+	    width: 80px;
+            
+        }
+
+.icon span {
+    word-wrap: break-word; /* Allows text to wrap within the icon width */
+    max-width: 100%; /* Ensures text doesn't overflow the icon width */
+}
+
+.icon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust the 80px value to increase/decrease space between columns */
+    gap: 200px; /* Increase this value to add more space between icons */
+    justify-content: start; /* Align grid to the start (left) of the container */
+    padding: 40px;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    image-rendering: pixelated;
+}
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #C0C0C0;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #808080;
+        }
+
+        .start-button {
+            background-color: #C0C0C0;
+            border: 2px outset #ffffff;
+            padding: 2px 5px;
+            font-weight: bold;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .start-button:active {
+            border: 2px inset #ffffff;
+        }
+
+.start-menu {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 200px;
+    background-color: rgba(192, 192, 192, 0.9);
+    border: 2px solid #808080;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    display: none;
+    animation: slideUp 0.3s ease-out;
+    max-height: calc(100vh - 50px); /* Limit the height */
+padding-bottom: 30px; /* Make room for the Shut Down option */
+}
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .start-menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #808080;
+            cursor: pointer;
+            background-color: rgba(192, 192, 192, 0.9);
+            transition: all 0.3s ease;
+	    position: relative;
+        }
+
+        .start-menu-item:hover {
+            background-color: #000080;
+            color: #ff00ff;
+        }
+
+.submenu {
+    position: absolute;
+    left: 100%; /* Position to the right of the parent item */
+    top: 0; /* Align with the top of the parent item */
+    display: none;
+    background-color: #C0C0C0;
+    border: 1px solid #808080;
+    min-width: 150px; /* Adjust as needed */
+}
+
+        .start-menu-item:hover .submenu {
+            display: block;
+        }
+
+        .dialog-box {
+            position: fixed;
+            top: 30%;
+            left: 40%;
+            width: 300px;
+            background-color: #C0C0C0;
+            border: 2px outset #ffffff;
+            padding: 2px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+            z-index: 1000;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .dialog-title {
+            background-color: #000080;
+            color: white;
+            padding: 3px 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dialog-title .close-button {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .dialog-content {
+            padding: 20px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .dialog-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .dialog-button {
+            background-color: #C0C0C0;
+            border: 2px outset #ffffff;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: 'VT323', 'MS Sans Serif', Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .dialog-button:active {
+            border: 2px inset #ffffff;
+        }
+
+        .neon-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+opacity: 0.3;
+            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,.2) 50%, rgba(0,0,0,.2));
+            background-size: 100% 4px;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+.music-player {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    background-color: #C0C0C0;
+    border: 2px outset #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.music-player .dialog-title {
+    background-color: #000080;
+    color: white;
+    padding: 3px 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.music-player .dialog-content {
+    padding: 10px;
+}
+
+.music-player video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+        progress {
+            width: 100%;
+            height: 20px;
+        }
+
+        .content-explorer {
+    background-color: #C0C0C0;
+    border: 2px outset #ffffff;
+    padding: 2px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 600px;
+    display: none;
+    z-index: 1001;
+}
+
+.content-explorer .window-body {
+    padding: 10px;
+    background-color: #000080;
+    height: calc(100% - 25px);
+    overflow-y: auto;
+}
+
+.stats-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stat-box {
+    background-color: #C0C0C0;
+    border: 2px inset #ffffff;
+    padding: 5px;
+    width: 24%;
+    text-align: center;
+}
+
+.content-feed {
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    border: 2px inset #ffffff;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+.content-item {
+    background-color: #000080;
+    color: #ffffff;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.content-item a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+#bin-container {
+    position: absolute;
+    bottom: 80px; /* Adjust this value based on your taskbar height */
+    right: 20px;
+    z-index: 100;
+}
+
+#bin-container .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ff00ff;
+    text-decoration: none;
+    cursor: url('https://win98icons.alexmeub.com/icons/png/hand-0.png'), pointer;
+}
+
+#bin-container .icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    image-rendering: pixelated;
+}
+
+#bin-container .icon:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Ensure the desktop area covers the full viewport minus the taskbar */
+
+.desktop {
+    position: relative;
+    height: calc(100vh - 35px); /* Adjust 35px to match your taskbar height */
+    overflow: hidden;
+    padding: 20px 40px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.file-item:hover {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+.file-item img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.picture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.picture-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #000080;
+    cursor: pointer;
+}
+
+.picture-grid img:hover {
+    border-color: #ff00ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+<style>
